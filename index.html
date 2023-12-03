@@ -3,12 +3,24 @@
 <link rel="shortcut icon" href="favicon.ico">
 <head>
     <meta charset="UTF-8">
-    <title>SimpleSearch</title>
+    <title>Newtab</title>
 </head>
 <style>
     body {
         font-size: 18px;
-        background: url("backend-img.jpg") no-repeat fixed center;
+        /*background: url("background.jpg") no-repeat fixed center;*/
+        /* 加载背景图 */
+        background-image: url("background.jpg");
+        /* 背景图垂直、水平均居中 */
+        background-position: center center;
+        /* 背景图不平铺 */
+        background-repeat: no-repeat;
+        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+        background-attachment: fixed;
+        /* 让背景图基于容器大小伸缩 */
+        background-size: cover;
+        /* 设置背景颜色，背景图加载过程中会显示背景色 */
+        background-color: #464646;
     }
 
     body > div {
@@ -18,10 +30,14 @@
         bottom: 0;
         top: 0;
         margin: auto;
-        width: 400px;
+        width: 410px;
         height: 40%;
         /*background-color: aliceblue;*/
         color: white;
+    }
+
+    .searchType label{
+        cursor: pointer;
     }
 
     .search {
@@ -29,29 +45,34 @@
     }
 
     .search > input[type='text'] {
-        width: 300px;
-        height: 30px;
+        width: 400px;
+        height: 40px;
+        font-size: 18px;
+        /*border-radius: 5px;*/
+        /*border-color: grey;*/
     }
 
     .search > button {
-        height: 35px;
+        height: 40px;
     }
 </style>
 <script>
     function search() {
-        let site = document.querySelector('input[name="site"]:checked').value;
-        let word = document.querySelector('input[id="search"]').value;
-        if (site === "baidu") {
-            window.open("https://www.baidu.com/baidu?wd=" + word);
-        }
-        if (site === "bing") {
-            window.open("https://cn.bing.com/search?q=" + word);
-        }
-        if (site === "sogou") {
-            window.open("https://www.sogou.com/web?query=" + word);
-        }
-        if (site === "zhihu") {
-            window.open("https://www.zhihu.com/search?type=content&q=" + word);
+        if(window.event.keyCode === 13){// enter键
+            let site = document.querySelector('input[name="site"]:checked').value;
+            let word = document.querySelector('input[id="search"]').value;
+            if (site === "baidu") {
+                window.open("https://www.baidu.com/baidu?wd=" + word);
+            }
+            if (site === "bing") {
+                window.open("https://cn.bing.com/search?q=" + word);
+            }
+            if (site === "sogou") {
+                window.open("https://www.sogou.com/web?query=" + word);
+            }
+            if (site === "zhihu") {
+                window.open("https://www.zhihu.com/search?type=content&q=" + word);
+            }
         }
     }
 </script>
@@ -72,8 +93,8 @@
         </label>
     </div>
     <div class="search">
-        <input type="text" id="search">
-        <button onclick="search()">开始搜索</button>
+        <input type="text" id="search" autofocus onkeydown="search()" placeholder="请输入搜索词">
+<!--        <button onclick="search()">搜索</button>-->
     </div>
 </div>
 </body>
