@@ -73,9 +73,12 @@
         <button id="zhihu">
             知乎
         </button>
-        <button id="sogou">
-            搜狗
+        <button id="fanyi">
+            翻译
         </button>
+<!--        <button id="sogou">-->
+<!--            搜狗-->
+<!--        </button>-->
         <button id="bing">
             Bing
         </button>
@@ -117,7 +120,7 @@
                 window.location.href = `https://www.baidu.com/baidu?wd=${word}`;
             }
             if (site === "bing") {
-                window.location.href = `https://cn.bing.com/search?q=${word}`;
+                window.location.href = `https://cn.bing.com/search?q=${word}&PC=U316&FROM=CHROMN`;
             }
             if (site === "sogou") {
                 window.location.href = `https://www.sogou.com/web?query=${word}`;
@@ -133,6 +136,9 @@
             }
             if (site === "github") {
                 window.location.href = `https://github.com/search?q=${word}`;
+            }
+            if (site === "fanyi") {
+                window.location.href = `https://fanyi.baidu.com/#zh/en/${word}`;
             }
         }
     }
