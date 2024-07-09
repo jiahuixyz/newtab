@@ -1,16 +1,45 @@
-// 设置搜索按钮选中状态
-let btns = document.querySelectorAll(".searchType button");
-for (let btn of btns) {
-    btn.addEventListener('click', function (e) {
-        let btns = document.querySelectorAll(".searchType button");
-        for (let btn of btns) {
-            if (btn.id === e.target.id) {
-                btn.setAttribute("data-select", "true");
-            } else {
-                btn.removeAttribute("data-select");
+
+// 初始化搜索按钮选中状态
+initBtnSelected();
+// 初始化格言
+initMotto();
+
+// 初始化搜索按钮选中状态
+function initBtnSelected() {
+    let btns = document.querySelectorAll(".searchType button");
+    for (let btn of btns) {
+        btn.addEventListener('click', function (e) {
+            let btns = document.querySelectorAll(".searchType button");
+            for (let btn of btns) {
+                if (btn.id === e.target.id) {
+                    btn.setAttribute("data-select", "true");
+                } else {
+                    btn.removeAttribute("data-select");
+                }
             }
-        }
-    });
+        });
+    }
+}
+
+// 初始化格言
+function initMotto() {
+    const currentDate = new Date().toDateString();
+    let storedDate = localStorage.getItem('currentDate');
+    let storedRandomInt = parseInt(localStorage.getItem('randomInt'));
+
+    if (storedDate !== currentDate || storedRandomInt > mottoArray.length - 1) {
+        storedRandomInt = getRandomInt(0, mottoArray.length);
+        localStorage.setItem('currentDate', currentDate);
+        localStorage.setItem('randomInt', storedRandomInt);
+    }
+
+    let mottoDiv = document.querySelector("#motto");
+    mottoDiv.textContent = "「 " + mottoArray[storedRandomInt].content + " 」";
+}
+
+// 获取指定范围内的随机整数
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function search() {

@@ -1,0 +1,66 @@
+body {
+    font-size: 18px;
+    /*background: url("background.jpg") no-repeat fixed center;*/
+    background-image: url("https://cn.bing.com/th?id=OHR.YenBaiTerraces_ZH-CN7224453501_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp");
+    /* 加载背景图 */
+    /*background-image: url("background.jpg");*/
+    /* 背景图垂直、水平均居中 */
+    background-position: center center;
+    /* 背景图不平铺 */
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+    /* 设置背景颜色，背景图加载过程中会显示背景色 */
+    background-color: #464646;
+}
+
+body > #searchPart {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 520px;
+    height: 40%;
+    color: white;
+    /*background-color: aliceblue;*/
+}
+
+.searchType button {
+    cursor: pointer;
+    border-radius: 30px;
+    border: 1px solid white;
+    width: 60px;
+    height: 30px;
+    background-color: white;
+    opacity: 0.6;
+}
+
+.searchType button[data-select='true']{
+    opacity: 1 !important;
+}
+
+.search {
+    margin-top: 10px;
+}
+
+.search > input[type='text'] {
+    width: 500px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding-left: 10px;
+}
+
+body > #motto{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+}
