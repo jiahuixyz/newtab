@@ -71,23 +71,3 @@ function search() {
         }
     }
 }
-
-function testgists() {
-    let element = document.querySelector("#testid");
-    fetch('https://api.github.com/gists', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/vnd.github+json',
-            'Authorization': 'token ' + element.value,
-            'X-GitHub-Api-Version': '2022-11-28'
-        },
-        body: JSON.stringify({
-            "description": 'Example of a gist',
-            "public": false,
-            "files": {"README.md": {"content": "手动创建"}}
-        })
-    })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
-}
