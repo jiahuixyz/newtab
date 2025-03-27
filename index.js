@@ -46,28 +46,28 @@ function search() {
         let word = document.querySelector('input[id="search"]').value;
         let site = document.querySelector('button[data-select="true"]').id;
         if (site === "baidu") {
-            window.location.href = `https://www.baidu.com/baidu?wd=${word}`;
+            window.open(`https://www.baidu.com/baidu?wd=${word}`);
         }
         if (site === "bing") {
-            window.location.href = `https://cn.bing.com/search?q=${word}`;
+            window.open(`https://cn.bing.com/search?q=${word}`);
         }
         if (site === "sogou") {
-            window.location.href = `https://www.sogou.com/web?query=${word}`;
+            window.open(`https://www.sogou.com/web?query=${word}`);
         }
         if (site === "zhihu") {
-            window.location.href = `https://www.zhihu.com/search?type=content&q=${word}`;
+            window.open(`https://www.zhihu.com/search?type=content&q=${word}`);
         }
         if (site === "google") {
-            window.location.href = `https://google.com/search?q=${word}`;
+            window.open(`https://google.com/search?q=${word}`);
         }
         if (site === "yandex") {
-            window.location.href = `https://yandex.com/search/?text=${word}`;
+            window.open(`https://yandex.com/search/?text=${word}`);
         }
         if (site === "github") {
-            window.location.href = `https://github.com/search?q=${word}`;
+            window.open(`https://github.com/search?q=${word}`);
         }
         if (site === "fanyi") {
-            window.location.href = `https://fanyi.baidu.com/#zh/en/${word}`;
+            window.open(`https://fanyi.baidu.com/#zh/en/${word}`);
         }
     }
 }
