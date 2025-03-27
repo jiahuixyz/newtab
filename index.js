@@ -49,7 +49,7 @@ function search() {
             window.location.href = `https://www.baidu.com/baidu?wd=${word}`;
         }
         if (site === "bing") {
-            window.location.href = `https://cn.bing.com/search?q=${word}&PC=U316&FROM=CHROMN`;
+            window.location.href = `https://cn.bing.com/search?q=${word}`;
         }
         if (site === "sogou") {
             window.location.href = `https://www.sogou.com/web?query=${word}`;
