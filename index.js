@@ -49,7 +49,7 @@ function search() {
             window.open(`https://www.baidu.com/baidu?wd=${word}`);
         }
         if (site === "bing") {
-            window.open(`https://cn.bing.com/search?q=${word}`);
+            window.open(`https://cn.bing.com/search?form=bing&q=${word}`);
         }
         if (site === "sogou") {
             window.open(`https://www.sogou.com/web?query=${word}`);
@@ -70,4 +70,31 @@ function search() {
             window.open(`https://fanyi.baidu.com/#zh/en/${word}`);
         }
     }
+}
+
+function testllm() {
+    let url = 'http://127.0.0.1:11434/api/generate';
+    fetch(url, {
+        method: 'POST',
+        mode: "cors",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            "model": "deepseek-r1:14b",
+            "prompt": "说一句名人名言，并带上作者，回答在100字以内",
+            "stream": false
+        })
+    }).then(response => {
+        console.log(response);
+        response.json()
+    })
+        .then(data => {
+            console.log("ollama请求成功");
+            console.log(data);
+        })
+        .catch(error => {
+            console.log("ollama请求失败");
+            console.log(error);
+        });
 }
