@@ -122,6 +122,7 @@ function getNoteKey() {
     const noteKey = localStorage.getItem('noteKey');
     if (!noteKey) {
         alert("请先设置noteKey")
+        throw new Error("noteKey is null");
     }
     return noteKey;
 }
@@ -136,7 +137,7 @@ function getGistHeader() {
 }
 
 async function getGists() {
-    let gistHeader = getGistHeader;
+    let gistHeader = getGistHeader();
     try {
         let response = await fetch('https://api.github.com/gists', {
             method: 'GET',
@@ -150,7 +151,7 @@ async function getGists() {
 }
 
 async function getGist(gistId, noteContent) {
-    let gistHeader = getGistHeader;
+    let gistHeader = getGistHeader();
     try {
         let response = await fetch('https://api.github.com/gists/' + gistId, {
             method: 'GET',
@@ -164,7 +165,7 @@ async function getGist(gistId, noteContent) {
 }
 
 async function updateGist(gistId, noteContent) {
-    let gistHeader = getGistHeader;
+    let gistHeader = getGistHeader();
     try {
         let response = await fetch('https://api.github.com/gists/' + gistId, {
             method: 'PATCH',
@@ -183,7 +184,7 @@ async function updateGist(gistId, noteContent) {
 }
 
 async function createGist(noteContent) {
-    let gistHeader = getGistHeader;
+    let gistHeader = getGistHeader();
     try {
         let response = await fetch('https://api.github.com/gists', {
             method: 'POST',
