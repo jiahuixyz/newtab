@@ -5,10 +5,24 @@
     <meta charset="UTF-8">
     <title>Newtab</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="note.css">
 </head>
 <body>
-    <button onclick="testllm()">测试</button>
-<!--    <div id="tip"></div>-->
+<button id="openBtn">Note</button>
+<div id="popupWindow">
+    <div class="header">
+        <div class="header-left">
+            <button id="pullBtn">Pull</button>
+            <button id="pushBtn">Push</button>
+        </div>
+        <button id="closeBtn">×</button>
+    </div>
+    <div class="content">
+        <textarea></textarea>
+    </div>
+</div>
+<!--<button onclick="testllm()">测试</button>-->
+<!--<div id="tip"></div>-->
 <div id="searchPart">
     <div class="searchType">
         <button id="baidu" data-select="true">
@@ -45,4 +59,5 @@
 </body>
 <script src="motto.js"></script>
 <script src="index.js"></script>
+<script src="note.js"></script>
 </html>
