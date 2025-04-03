@@ -5,6 +5,8 @@ const closeBtn = document.getElementById('closeBtn');
 const pullBtn = document.getElementById('pullBtn');
 const pushBtn = document.getElementById('pushBtn');
 const textarea = document.querySelector('textarea');
+const processText = document.getElementById('processText');
+const spinner = document.getElementById('spinner');//加载圆圈
 
 // 打开弹窗
 openBtn.addEventListener('click', function (e) {
@@ -82,15 +84,28 @@ textarea.addEventListener('input', function (event) {
  * 3.根据id查详情
  */
 async function pullNote() {
+    spinner.classList.add('active');// 展示加载效果
+
     let gists = await getGists();
     console.log(gists)
     const newtabNote = gists.find(item => item.files.hasOwnProperty("newtabNote.md"));
+
     if (newtabNote) {
         console.log("存在newtabNote，获取gist")
         let result = await getGist(newtabNote.id);
+        let noteContent = result.files['newtabNote.md'].content;
+
+        // 设置文本域和localStorage
         const textarea = document.querySelector('textarea');
-        textarea.value = result.files['newtabNote.md'].content;
-        alert("pull success!");
+        textarea.value = noteContent;
+        localStorage.setItem("noteContent", noteContent);
+
+        spinner.classList.remove('active');//隐藏加载效果
+        setProcessText('pull success!');
+    } else {
+        console.log("不存在newtabNote")
+        spinner.classList.remove('active');//隐藏加载效果
+        setProcessText('note not exist, please push at first');
     }
 }
 
@@ -103,9 +118,12 @@ async function pullNote() {
 async function pushNote() {
     const noteContent = localStorage.getItem('noteContent');
     if (!noteContent) {
-        alert("note是空的")
+        alert("note is empty")
         return;
     }
+
+    spinner.classList.add('active');// 展示加载效果
+
     let gists = await getGists(noteContent);
     const newtabNote = gists.find(item => item.files.hasOwnProperty("newtabNote.md"));
     if (newtabNote) {
@@ -115,7 +133,17 @@ async function pushNote() {
         console.log("不存在newtabNote，新建gist")
         await createGist(noteContent);
     }
-    alert("push success!");
+
+    spinner.classList.remove('active');//隐藏加载效果
+    setProcessText('push success!');
+}
+
+// 设置处理完展示的文本
+function setProcessText(text) {
+    processText.innerHTML = text;
+    setTimeout(function () {
+        processText.innerHTML = '';
+    }, 3000);
 }
 
 function getNoteKey() {
