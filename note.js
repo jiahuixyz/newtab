@@ -17,7 +17,7 @@ openBtn.addEventListener('click', function (e) {
 
     // 如果note为空，pull note
     const noteContent = localStorage.getItem('noteContent');
-    if(!noteContent){
+    if (!noteContent) {
         pullNote();
     }
 });
@@ -90,7 +90,13 @@ textarea.addEventListener('input', function (event) {
  * 3.根据id查详情
  */
 async function pullNote() {
-    spinner.classList.add('active');// 展示加载效果
+    if (!checkNoteKey()) {
+        setProcessText('请先设置noteKey');
+        return;
+    }
+
+    // 展示加载效果
+    spinner.classList.add('active');
 
     let gists = await getGists();
     console.log(gists)
@@ -106,11 +112,13 @@ async function pullNote() {
         textarea.value = noteContent;
         localStorage.setItem("noteContent", noteContent);
 
-        spinner.classList.remove('active');//隐藏加载效果
+        //隐藏加载效果
+        spinner.classList.remove('active');
         setProcessText('pull success!');
     } else {
         console.log("不存在newtabNote")
-        spinner.classList.remove('active');//隐藏加载效果
+        //隐藏加载效果
+        spinner.classList.remove('active');
         setProcessText('note not exist, please push at first');
     }
 }
@@ -122,6 +130,11 @@ async function pullNote() {
  * 4.若没有找到，则新建一个
  */
 async function pushNote() {
+    if (!checkNoteKey()) {
+        setProcessText('请先设置noteKey');
+        return;
+    }
+
     const noteContent = localStorage.getItem('noteContent');
     if (!noteContent) {
         setProcessText('note is empty');
@@ -152,10 +165,13 @@ function setProcessText(text) {
     }, 3000);
 }
 
+function checkNoteKey() {
+    return localStorage.getItem('noteKey');
+}
+
 function getNoteKey() {
     const noteKey = localStorage.getItem('noteKey');
     if (!noteKey) {
-        setProcessText('请先设置noteKey');
         throw new Error("noteKey is null");
     }
     return noteKey;
