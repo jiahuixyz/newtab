@@ -14,6 +14,12 @@ openBtn.addEventListener('click', function (e) {
     popupWindow.style.top = `${rect.bottom + window.scrollY + 10}px`;
     popupWindow.style.left = `${rect.left + window.scrollX}px`;
     popupWindow.style.display = 'block';
+
+    // 如果note为空，pull note
+    const noteContent = localStorage.getItem('noteContent');
+    if(!noteContent){
+        pullNote();
+    }
 });
 
 // 关闭弹窗
@@ -118,7 +124,7 @@ async function pullNote() {
 async function pushNote() {
     const noteContent = localStorage.getItem('noteContent');
     if (!noteContent) {
-        alert("note is empty")
+        setProcessText('note is empty');
         return;
     }
 
@@ -149,7 +155,7 @@ function setProcessText(text) {
 function getNoteKey() {
     const noteKey = localStorage.getItem('noteKey');
     if (!noteKey) {
-        alert("请先设置noteKey")
+        setProcessText('请先设置noteKey');
         throw new Error("noteKey is null");
     }
     return noteKey;
