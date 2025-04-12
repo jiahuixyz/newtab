@@ -8,13 +8,13 @@
     <link rel="stylesheet" type="text/css" href="note.css">
 </head>
 <body>
+<div class="spinner" id="spinner"></div>
 <button id="openBtn">Note</button>
 <div id="popupWindow">
     <div class="header">
         <div class="header-left">
             <button id="pullBtn">Pull</button>
             <button id="pushBtn">Push</button>
-            <div class="spinner" id="spinner"></div>
             <span id="processText"></span>
         </div>
         <button id="closeBtn">×</button>
@@ -48,13 +48,17 @@
         <button id="yandex">
             Yandex
         </button>
-        <button id="github">
-            Github
+<!--        <button id="github">-->
+<!--            Github-->
+<!--        </button>-->
+        <button id="ai">
+            AI
         </button>
     </div>
     <div class="search">
         <input type="text" id="search" autofocus onkeydown="search()" placeholder="请输入搜索词">
     </div>
+    <div id="search-bottom"></div>
 </div>
 <!--底部格言-->
 <div id="motto"></div>

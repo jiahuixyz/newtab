@@ -78,3 +78,20 @@ body > #motto {
     height: 100px;
     width: 200px;
 }
+
+#search-bottom{
+    width: 488px;
+    min-height: 200px;
+    max-height: 300px;
+    padding: 14px;
+    overflow-y:auto;
+    background: white;
+    margin-top: 10px;
+    color: black;
+    border-radius: 10px;
+    display: none;
+}
+
+#search-bottom.active{
+    display: block;
+}

@@ -58,6 +58,13 @@ document.addEventListener('keydown', function (e) {
         if (document.activeElement === textarea) {
             textarea.blur();
         }
+
+    }
+    if ((e.key === 'Escape' || e.keyCode === 27)) {
+        // 关闭AI问题回答框
+        const bottom = document.getElementById('search-bottom');
+        bottom.classList.remove('active');
+        bottom.textContent = '';
     }
 });
 
