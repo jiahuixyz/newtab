@@ -11,3 +11,12 @@ function getNowDate() {
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
+
+// 一年中第几天
+function getDayOfYear() {
+    const now = new Date(); // 当前日期
+    const start = new Date(now.getFullYear(), 0, 0); // 去年12月31日
+    const diff = now - start; // 时间差（毫秒）
+    const oneDay = 1000 * 60 * 60 * 24; // 一天的毫秒数
+    return Math.floor(diff / oneDay); // 返回天数
+}
