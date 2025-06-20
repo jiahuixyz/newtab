@@ -65,14 +65,15 @@ body > #motto {
     width: 100%;
     color: white;
     font-size: 18px;
+    z-index: 10;
 }
 
-#search-bottom{
+#search-bottom {
     width: 488px;
     min-height: 200px;
     max-height: 300px;
     padding: 14px;
-    overflow-y:auto;
+    overflow-y: auto;
     background: white;
     margin-top: 10px;
     color: black;
@@ -80,6 +81,39 @@ body > #motto {
     display: none;
 }
 
-#search-bottom.active{
+#search-bottom.active {
     display: block;
+}
+
+/*左上角的链接*/
+
+#link {
+    display: inline-block;
+    padding: 10px 10px 10px 30px;
+}
+
+#link a {
+    margin-right: 10px;
+    color: white;
+    opacity: 0.9;
+    font-size: 16px;
+    text-decoration: none; /* 取消下划线 */
+}
+
+#link a:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/*左下角的设置*/
+
+#setting {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 100;
+}
+
+#setting button {
+    opacity: 0.8;
 }
