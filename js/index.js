@@ -36,11 +36,6 @@ function initMotto() {
     mottoDiv.textContent = "「 " + mottoArray[storedRandomInt].content + " 」";
 }
 
-// 获取指定范围内的随机整数
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function search() {
     if (window.event.keyCode === 13) {// enter键
         let word = document.querySelector('input[id="search"]').value;

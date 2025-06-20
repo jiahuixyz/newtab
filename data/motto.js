@@ -41,6 +41,9 @@ const mottoArray = [{
 }, {
     "content": "我醒了，天为我亮了",
     "author": "早安"
+}, {
+    "content": "一些话靠实力和诚信出行的人，会越走越远。",
+    "author": "早安"
 }];
 
 const bakMotto = [{

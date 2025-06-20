@@ -8,23 +8,26 @@
     <link rel="stylesheet" type="text/css" href="css/note.css">
 </head>
 <body>
-<div class="spinner" id="spinner"></div>
-<button id="openBtn">Note</button>
-<div id="popupWindow">
-    <div class="header">
-        <div class="header-left">
-            <button id="pullBtn">Pull</button>
-            <button id="pushBtn">Push</button>
-            <span id="processText"></span>
-        </div>
-        <button id="closeBtn">×</button>
-    </div>
-    <div class="content">
-        <textarea></textarea>
-    </div>
-</div>
+<!--<div class="spinner" id="spinner"></div>-->
+<!--<button id="openBtn">Note</button>-->
+<!--<div id="popupWindow">-->
+<!--    <div class="header">-->
+<!--        <div class="header-left">-->
+<!--            <button id="pullBtn">Pull</button>-->
+<!--            <button id="pushBtn">Push</button>-->
+<!--            <span id="processText"></span>-->
+<!--        </div>-->
+<!--        <button id="closeBtn">×</button>-->
+<!--    </div>-->
+<!--    <div class="content">-->
+<!--        <textarea></textarea>-->
+<!--    </div>-->
+<!--</div>-->
+
 <!--<button onclick="testllm()">测试</button>-->
-<!--<div id="tip"></div>-->
+<button onclick="changeImg()">更换背景</button>
+<!--<button onclick="testllm()">更换格言</button>-->
+
 <div id="searchPart">
     <div class="searchType">
         <button id="baidu" data-select="true">
@@ -60,11 +63,15 @@
     </div>
     <div id="search-bottom"></div>
 </div>
+
 <!--底部格言-->
 <div id="motto"></div>
 </body>
-<script src="js/motto.js"></script>
+<script src="data/motto.js"></script>
+<script src="data/img.js"></script>
+<script src="js/util.js"></script>
 <script src="js/index.js"></script>
 <script src="js/gist.js"></script>
 <script src="js/note.js"></script>
+<script src="js/wallpaper.js"></script>
 </html>

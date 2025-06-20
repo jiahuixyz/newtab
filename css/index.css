@@ -5,10 +5,7 @@ html, body {
 
 body {
     font-size: 18px;
-    /*background: url("background.jpg") no-repeat fixed center;*/
-    background-image: url("https://cn.bing.com/th?id=OHR.SibiuRomania_ZH-CN1631942857_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp");
-    /* 加载背景图 */
-    /*background-image: url("background.jpg");*/
+    /* background-image由js动态设置 */
     /* 背景图垂直、水平均居中 */
     background-position: center center;
     /* 背景图不平铺 */
@@ -68,15 +65,6 @@ body > #motto {
     width: 100%;
     color: white;
     font-size: 18px;
-}
-
-#tip{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: white;
-    height: 100px;
-    width: 200px;
 }
 
 #search-bottom{

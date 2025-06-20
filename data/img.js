@@ -1,0 +1,10 @@
+const imgIdArray = ['OHR.BalloonDay_ZH-CN7571792218_1920x1080.jpg',
+    'OHR.ElephantTwins_ZH-CN6743766062_1920x1080.jpg',
+    'OHR.GrandPlaceXmas_ZH-CN8299342316_1920x1080.jpg',
+    'OHR.SeaDog_ZH-CN2900177328_1920x1080.jpg',
+    'OHR.WatSriSawai_ZH-CN7688908090_1920x1080.jpg',
+    'OHR.AschauChiemgau_ZH-CN1929016406_1920x1080.jpg',
+    'OHR.MoonDogs_ZH-CN5201314184_1920x1080.jpg',
+    'OHR.MaldivesHeart_ZH-CN0032539727_1920x1080.jpg',
+    'OHR.MarsalaSalt_ZH-CN4943158328_1920x1080.jpg',
+    'OHR.StartPointLight_ZH-CN4021540566_1920x1080.jpg'];
