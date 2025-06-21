@@ -8,8 +8,12 @@
     <link rel="stylesheet" type="text/css" href="css/note.css">
 </head>
 <body>
-<div class="spinner" id="spinner"></div>
-<!--<button id="openBtn">Note</button>-->
+
+<!-- 背景图片将渲染在这里 -->
+<div class="bg-image" id="bgTarget"></div>
+
+<!-- 笔记按钮 -->
+<button id="openBtn">Note</button>
 <div id="popupWindow">
     <div class="header">
         <div class="header-left">
@@ -24,16 +28,20 @@
     </div>
 </div>
 
-<div id="setting">
-    <!--<button onclick="testllm()">测试</button>-->
-    <button onclick="changeImg()">更换背景</button>
-    <button onclick="changeMotto()">更换格言</button>
-</div>
+<!-- 加载效果-->
+<div class="spinner" id="spinner"></div>
 
+<!-- 链接-->
 <div id="link">
     <a href="https://chat.deepseek.com" target="_blank">DeepSeek</a>
     <a href="https://www.doubao.com" target="_blank">豆包</a>
     <a href="https://www.yuque.com" target="_blank">语雀</a>
+</div>
+
+<div id="setting">
+    <!--<button onclick="testllm()">测试</button>-->
+    <button onclick="changeImg()">更换背景</button>
+    <button onclick="changeMotto()">更换格言</button>
 </div>
 
 <div id="searchPart">

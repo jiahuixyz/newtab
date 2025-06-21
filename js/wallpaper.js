@@ -28,9 +28,26 @@ function setImgByIndex(imgIndex) {
     }
 
     // imgIndex的范围是0 ～ imgIdArray.length-1
-    const imgUrl = imgIdArray[imgIndex];
-    // 设置body背景图
-    document.body.style.backgroundImage = `url("https://cn.bing.com/th?id=${imgUrl}")`;
+    const imgId = imgIdArray[imgIndex];
+    const imageUrl = `https://cn.bing.com/th?id=${imgId}`;
+
+    // 1. 创建Image对象预加载
+    const loader = new Image();
+
+    // 2. 设置加载完成的回调
+    const bgTarget = document.getElementById('bgTarget');
+    loader.onload = function() {
+        // 应用背景图片
+        bgTarget.style.backgroundImage = `url(${imageUrl})`;
+    };
+
+    // 3. 处理加载错误
+    loader.onerror = function() {
+        console.error('图片加载失败');
+    };
+
+    // 4. 开始加载（设置src触发加载）
+    loader.src = imageUrl;
 }
 
 // 更换背景
