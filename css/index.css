@@ -66,6 +66,7 @@ body > #motto {
     color: white;
     font-size: 18px;
     z-index: 10;
+    opacity: 0.9;
 }
 
 #search-bottom {
@@ -96,7 +97,7 @@ body > #motto {
     margin-right: 10px;
     color: white;
     opacity: 0.9;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none; /* 取消下划线 */
 }
 
