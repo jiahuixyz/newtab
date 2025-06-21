@@ -118,3 +118,23 @@ body > #motto {
 #setting button {
     opacity: 0.8;
 }
+
+/* 搜索建议 */
+
+#search-sug{
+    background: white;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: black;
+    display: none;
+}
+
+#search-sug div{
+    height: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#search-sug div:hover{
+    background: #dddddd;
+}

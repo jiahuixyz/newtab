@@ -1,6 +1,20 @@
 // 初始化搜索按钮选中状态
 initBtnSelected();
 
+// const inputElement = document.getElementById('search');
+//
+// inputElement.addEventListener('input', function(event) {
+//     console.log('输入的值:', event.target.value);
+//     const searchSug = document.getElementById('search-sug');
+//     searchSug.style.display = 'block';
+// });
+
+// inputElement.addEventListener('blur', function(event) {
+//     console.log('输入框失去焦点，当前值:', event.target.value);
+//     const searchSug = document.getElementById('search-sug');
+//     searchSug.style.display = 'none';
+// });
+
 // 初始化搜索按钮选中状态
 function initBtnSelected() {
     let btns = document.querySelectorAll(".searchType button");
