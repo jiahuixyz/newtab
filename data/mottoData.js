@@ -39,9 +39,6 @@ const mottoArray = [{
     "content": "不要再继续睡着做梦，醒来吧，开始圆梦",
     "author": "早安"
 }, {
-    "content": "我醒了，天为我亮了",
-    "author": "早安"
-}, {
     "content": "一些话靠实力和诚信出行的人，会越走越远。",
     "author": "早安"
 }];
@@ -57,5 +54,8 @@ const bakMotto = [{
     "author": "早安"
 }, {
     "content": "成功没有快车道，它来自平凡的奋斗和坚持",
+    "author": "早安"
+}, {
+    "content": "我醒了，天为我亮了",
     "author": "早安"
 }]
