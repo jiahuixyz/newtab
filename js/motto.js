@@ -18,7 +18,7 @@ function initMotto() {
 
 function setMottoByIndex(mottoIndex) {
     let mottoDiv = document.querySelector("#motto");
-    mottoDiv.textContent = "「 " + mottoArray[mottoIndex].content + " 」";
+    mottoDiv.textContent = "「 " + mottoArray[mottoIndex] + " 」";
 }
 
 function changeMotto() {
