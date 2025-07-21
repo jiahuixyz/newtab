@@ -88,7 +88,7 @@ define(['./workbox-9dc299d5'], (function (workbox) { 'use strict';
     "revision": "a835f887a3a5106983bcb333ab1b6401"
   }, {
     "url": "index.js",
-    "revision": "3f6bd4815b72796be20ca2fe7ba1f195"
+    "revision": "0c5f9689c31063104eaaf817224998c2"
   }], {});
   workbox.registerRoute(/.(?:js|css|html|ico|jpg)$/, new workbox.CacheFirst({
     "cacheName": "static-resources",
