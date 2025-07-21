@@ -14,7 +14,7 @@ jobs:
     - name: Install and Build
       run: |
         npm install
-        npmx webpack
+        npx webpack
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.2
       with:
