@@ -20,3 +20,7 @@ function getDayOfYear() {
     const oneDay = 1000 * 60 * 60 * 24; // 一天的毫秒数
     return Math.floor(diff / oneDay); // 返回天数
 }
+
+window.getRandomInt = getRandomInt;
+window.getNowDate = getNowDate;
+window.getDayOfYear = getDayOfYear;

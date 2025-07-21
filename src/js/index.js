@@ -205,3 +205,5 @@ async function testllm(word) {
     //隐藏加载效果
     spinner.classList.remove('active');
 }
+
+window.search=search;

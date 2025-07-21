@@ -98,3 +98,5 @@ const imgIdArray = ['OHR.SaCalobra_ZH-CN0945855556_1920x1080.jpg',
     'OHR.GorgeSavoie_ZH-CN9079188802_1920x1080.jpg',
     'OHR.NakupendaBeach_ZH-CN7913805608_1920x1080.jpg',
     'OHR.RichmondParkDuck_ZH-CN4956127005_1920x1080.jpg'];
+
+window.imgIdArray = imgIdArray;

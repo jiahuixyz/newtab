@@ -69,3 +69,4 @@ function changeImg() {
 }
 
 initImg();
+window.changeImg=changeImg;

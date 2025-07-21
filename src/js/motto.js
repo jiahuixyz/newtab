@@ -40,3 +40,4 @@ function changeMotto() {
 
 // 初始化格言
 initMotto();
+window.changeMotto=changeMotto;
