@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="img/favicon.ico">
+<head>
+    <meta charset="UTF-8">
+    <title>Newtab</title>
+<script defer src="index.js"></script></head>
+<body>
+
+<!-- 背景图片将渲染在这里 -->
+<div class="bg-image" id="bgTarget"></div>
+
+<!-- 笔记按钮 -->
+<!--<button id="openBtn">Note</button>-->
+<div id="popupWindow">
+    <div class="header">
+        <div class="header-left">
+            <button id="pullBtn">Pull</button>
+            <button id="pushBtn">Push</button>
+            <span id="processText"></span>
+        </div>
+        <button id="closeBtn">×</button>
+    </div>
+    <div class="content">
+        <textarea></textarea>
+    </div>
+</div>
+
+<!-- 加载效果-->
+<div class="spinner" id="spinner"></div>
+
+<!-- 链接-->
+<div id="link">
+    <a href="https://chat.deepseek.com" target="_blank">DeepSeek</a>
+    <a href="https://www.doubao.com" target="_blank">豆包</a>
+    <a href="https://www.yuque.com" target="_blank">语雀</a>
+</div>
+
+<div id="setting">
+    <!--<button onclick="testllm()">测试</button>-->
+    <button onclick="changeImg()">更换背景</button>
+    <button onclick="changeMotto()">更换格言</button>
+</div>
+
+<div id="searchPart">
+    <div class="searchType">
+        <button id="baidu" data-select="true">
+            百度
+        </button>
+        <button id="zhihu">
+            知乎
+        </button>
+        <button id="fanyi">
+            翻译
+        </button>
+        <button id="sogou">
+            搜狗
+        </button>
+        <button id="bing">
+            Bing
+        </button>
+        <!--        <button id="google">-->
+        <!--            Google-->
+        <!--        </button>-->
+        <button id="yandex">
+            Yandex
+        </button>
+        <button id="github">
+            Github
+        </button>
+<!--        <button id="ai">-->
+<!--            AI-->
+<!--        </button>-->
+    </div>
+    <div class="search">
+        <input type="text" id="search" autofocus onkeydown="search()" placeholder="请输入搜索词">
+    </div>
+    <div id="search-bottom"></div>
+
+    <div id="search-sug"></div>
+</div>
+
+<!--底部格言-->
+<div id="motto"></div>
+</body>
+</html>
