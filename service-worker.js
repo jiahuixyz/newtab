@@ -85,10 +85,10 @@ define(['./workbox-9dc299d5'], (function (workbox) { 'use strict';
     "revision": "f6650eecb0f1357cde829342b365826e"
   }, {
     "url": "index.html",
-    "revision": "6f0d4cf81882f692f9fc46685309f983"
+    "revision": "99348939b0760ae3c1afa636d5db8150"
   }, {
     "url": "index.js",
-    "revision": "45c43cc3403e4dc57b43a665495a80d8"
+    "revision": "d2d998a1c02d1ad63252acd05a521545"
   }], {});
   workbox.registerRoute(/.(?:js|css|html|ico|jpg)$/, new workbox.CacheFirst({
     "cacheName": "static-resources",

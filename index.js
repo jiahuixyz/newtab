@@ -24,9 +24,8 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `html, body {
     margin: 0;
     padding: 0;
-}
-
-body {
+    width: 100%;
+    height: 100%;
     font-size: 18px;
 }
 
@@ -93,28 +92,32 @@ body > #motto {
     opacity: 0.9;
 }
 
-#search-bottom {
-    width: 488px;
-    min-height: 200px;
-    max-height: 300px;
-    padding: 14px;
+#llmPart {
+    position: absolute;
+    right:16px;
+    width: 300px;
+    padding: 10px;
+    margin: 40px 0px 40px 0;
+    height: calc(100% - 102px);
     overflow-y: auto;
     background: white;
-    margin-top: 10px;
+    opacity: 0.9;
     color: black;
     border-radius: 10px;
     display: none;
+    white-space: pre-line;
 }
 
-#search-bottom.active {
+#llmPart.active {
     display: block;
 }
 
 /*左上角的链接*/
 
 #link {
-    display: inline-block;
-    padding: 10px 10px 10px 20px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
 #link a {
@@ -161,7 +164,7 @@ body > #motto {
 
 #search-sug div:hover{
     background: #dddddd;
-}`, "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA,qBAAqB;AACrB;IACI,kBAAkB;IAClB,MAAM;IACN,OAAO;IACP,WAAW;IACX,YAAY;IACZ,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,OAAO;IACP,QAAQ;IACR,SAAS;IACT,MAAM;IACN,YAAY;IACZ,YAAY;IACZ,WAAW;IACX,YAAY;IACZ,+BAA+B;AACnC;;AAEA;IACI,eAAe;IACf,mBAAmB;IACnB,uBAAuB;IACvB,WAAW;IACX,YAAY;IACZ,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,mBAAmB;IACnB,uBAAuB;IACvB,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,eAAe;IACf,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,iBAAiB;IACjB,iBAAiB;IACjB,aAAa;IACb,gBAAgB;IAChB,iBAAiB;IACjB,gBAAgB;IAChB,YAAY;IACZ,mBAAmB;IACnB,aAAa;AACjB;;AAEA;IACI,cAAc;AAClB;;AAEA,SAAS;;AAET;IACI,qBAAqB;IACrB,4BAA4B;AAChC;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,qBAAqB,EAAE,UAAU;AACrC;;AAEA;IACI,UAAU;IACV,eAAe;AACnB;;AAEA,SAAS;;AAET;IACI,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;AAChB;;AAEA,SAAS;;AAET;IACI,iBAAiB;IACjB,mBAAmB;IACnB,eAAe;IACf,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;AACvB","sourcesContent":["html, body {\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-size: 18px;\n}\n\n/* 背景图片容器 - 初始状态不可见 */\n.bg-image {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-size: cover;\n    background-position: center;\n    z-index: -1;\n}\n\nbody > #searchPart {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    top: 0;\n    margin: auto;\n    width: 520px;\n    height: 40%;\n    color: white;\n    /*background-color: aliceblue;*/\n}\n\n.searchType button {\n    cursor: pointer;\n    border-radius: 30px;\n    border: 1px solid white;\n    width: 60px;\n    height: 30px;\n    background-color: white;\n    opacity: 0.6;\n}\n\n.searchType button[data-select='true'] {\n    opacity: 1 !important;\n}\n\n.search {\n    margin-top: 10px;\n}\n\n.search > input[type='text'] {\n    width: 500px;\n    height: 50px;\n    font-size: 18px;\n    border-radius: 10px;\n    border: 1px solid white;\n    padding-left: 10px;\n}\n\nbody > #motto {\n    position: absolute;\n    bottom: 20px;\n    text-align: center;\n    width: 100%;\n    color: white;\n    font-size: 18px;\n    z-index: 10;\n    opacity: 0.9;\n}\n\n#search-bottom {\n    width: 488px;\n    min-height: 200px;\n    max-height: 300px;\n    padding: 14px;\n    overflow-y: auto;\n    background: white;\n    margin-top: 10px;\n    color: black;\n    border-radius: 10px;\n    display: none;\n}\n\n#search-bottom.active {\n    display: block;\n}\n\n/*左上角的链接*/\n\n#link {\n    display: inline-block;\n    padding: 10px 10px 10px 20px;\n}\n\n#link a {\n    margin-right: 10px;\n    color: white;\n    opacity: 0.9;\n    font-size: 14px;\n    text-decoration: none; /* 取消下划线 */\n}\n\n#link a:hover {\n    opacity: 1;\n    cursor: pointer;\n}\n\n/*左下角的设置*/\n\n#setting {\n    position: absolute;\n    left: 10px;\n    bottom: 10px;\n    z-index: 100;\n}\n\n#setting button {\n    opacity: 0.8;\n}\n\n/* 搜索建议 */\n\n#search-sug{\n    background: white;\n    border-radius: 10px;\n    margin-top: 5px;\n    color: black;\n    display: none;\n}\n\n#search-sug div{\n    height: 24px;\n    padding: 10px;\n    border-radius: 10px;\n}\n\n#search-sug div:hover{\n    background: #dddddd;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;IACV,WAAW;IACX,YAAY;IACZ,eAAe;AACnB;;AAEA,qBAAqB;AACrB;IACI,kBAAkB;IAClB,MAAM;IACN,OAAO;IACP,WAAW;IACX,YAAY;IACZ,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,OAAO;IACP,QAAQ;IACR,SAAS;IACT,MAAM;IACN,YAAY;IACZ,YAAY;IACZ,WAAW;IACX,YAAY;IACZ,+BAA+B;AACnC;;AAEA;IACI,eAAe;IACf,mBAAmB;IACnB,uBAAuB;IACvB,WAAW;IACX,YAAY;IACZ,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,mBAAmB;IACnB,uBAAuB;IACvB,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,eAAe;IACf,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,0BAA0B;IAC1B,gBAAgB;IAChB,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,qBAAqB;AACzB;;AAEA;IACI,cAAc;AAClB;;AAEA,SAAS;;AAET;IACI,kBAAkB;IAClB,SAAS;IACT,UAAU;AACd;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,qBAAqB,EAAE,UAAU;AACrC;;AAEA;IACI,UAAU;IACV,eAAe;AACnB;;AAEA,SAAS;;AAET;IACI,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;AAChB;;AAEA,SAAS;;AAET;IACI,iBAAiB;IACjB,mBAAmB;IACnB,eAAe;IACf,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;AACvB","sourcesContent":["html, body {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n    height: 100%;\n    font-size: 18px;\n}\n\n/* 背景图片容器 - 初始状态不可见 */\n.bg-image {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-size: cover;\n    background-position: center;\n    z-index: -1;\n}\n\nbody > #searchPart {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    top: 0;\n    margin: auto;\n    width: 520px;\n    height: 40%;\n    color: white;\n    /*background-color: aliceblue;*/\n}\n\n.searchType button {\n    cursor: pointer;\n    border-radius: 30px;\n    border: 1px solid white;\n    width: 60px;\n    height: 30px;\n    background-color: white;\n    opacity: 0.6;\n}\n\n.searchType button[data-select='true'] {\n    opacity: 1 !important;\n}\n\n.search {\n    margin-top: 10px;\n}\n\n.search > input[type='text'] {\n    width: 500px;\n    height: 50px;\n    font-size: 18px;\n    border-radius: 10px;\n    border: 1px solid white;\n    padding-left: 10px;\n}\n\nbody > #motto {\n    position: absolute;\n    bottom: 20px;\n    text-align: center;\n    width: 100%;\n    color: white;\n    font-size: 18px;\n    z-index: 10;\n    opacity: 0.9;\n}\n\n#llmPart {\n    position: absolute;\n    right:16px;\n    width: 300px;\n    padding: 10px;\n    margin: 40px 0px 40px 0;\n    height: calc(100% - 102px);\n    overflow-y: auto;\n    background: white;\n    opacity: 0.9;\n    color: black;\n    border-radius: 10px;\n    display: none;\n    white-space: pre-line;\n}\n\n#llmPart.active {\n    display: block;\n}\n\n/*左上角的链接*/\n\n#link {\n    position: absolute;\n    top: 10px;\n    left: 20px;\n}\n\n#link a {\n    margin-right: 10px;\n    color: white;\n    opacity: 0.9;\n    font-size: 14px;\n    text-decoration: none; /* 取消下划线 */\n}\n\n#link a:hover {\n    opacity: 1;\n    cursor: pointer;\n}\n\n/*左下角的设置*/\n\n#setting {\n    position: absolute;\n    left: 10px;\n    bottom: 10px;\n    z-index: 100;\n}\n\n#setting button {\n    opacity: 0.8;\n}\n\n/* 搜索建议 */\n\n#search-sug{\n    background: white;\n    border-radius: 10px;\n    margin-top: 5px;\n    color: black;\n    display: none;\n}\n\n#search-sug div{\n    height: 24px;\n    padding: 10px;\n    border-radius: 10px;\n}\n\n#search-sug div:hover{\n    background: #dddddd;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1146,80 +1149,103 @@ function search() {
             window.open(`https://www.iciba.com/word?w=${word}`);
         }
         if (site === "ai") {
-            if (word) {
-                testllm(word);
-            }
+            testllm(word);
         }
     }
+}
+
+function changeSearch(button){
+    const llmPart = document.getElementById('llmPart');
+    if (button.id === "ai") {
+        llmPart.classList.add('active');
+    }else{
+        llmPart.classList.remove('active');
+    }
+}
+
+window.search=search;
+window.changeSearch=changeSearch;
+
+/***/ }),
+
+/***/ "./src/js/llm.js":
+/*!***********************!*\
+  !*** ./src/js/llm.js ***!
+  \***********************/
+/***/ (() => {
+
+async function pingTest() {
+    const spinner = document.getElementById('spinner');//加载圆圈
+    let url = 'http://127.0.0.1:32008/testHello';
+    fetch(url, {
+        method: 'POST',
+        mode: "cors"
+    }).then(response => response.json()
+    ).then(data => {
+        //隐藏加载效果
+        spinner.classList.remove('active');
+    
+        console.log("请求成功");
+        console.log(data);
+    }).catch(error => {
+        //隐藏加载效果
+        spinner.classList.remove('active');
+    
+        console.log("请求失败");
+        console.log(error);
+    });
 }
 
 async function testllm(word) {
     // 展示加载效果
     spinner.classList.add('active');
 
-    let url = 'http://127.0.0.1:11434/api/generate';
-    // fetch(url, {
-    //     method: 'POST',
-    //     mode: "cors",
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //         "model": "deepseek-r1:7b",
-    //         "prompt": word,
-    //         "stream": false
-    //     })
-    // }).then(response => response.json()
-    // ).then(data => {
-    //     //隐藏加载效果
-    //     spinner.classList.remove('active');
-    //
-    //     console.log("ollama请求成功");
-    //     console.log(data);
-    //
-    //     const bottom = document.getElementById('search-bottom');
-    //     bottom.classList.add('active');
-    //     bottom.textContent = data.response;
-    // }).catch(error => {
-    //     //隐藏加载效果
-    //     spinner.classList.remove('active');
-    //
-    //     console.log("ollama请求失败");
-    //     console.log(error);
-    // });
-
-
     // 发起 Fetch 请求
-    const response = await fetch('http://localhost:11434/api/generate', {
+    const response = await fetch('http://localhost:32008/chat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            "model": "deepseek-r1:14b",
-            "prompt": word,
-            "stream": true
+            "question": word,
         }),
     });
 
     // 获取可读流
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
-    const bottom = document.getElementById('search-bottom');
+    const bottom = document.getElementById('llmPart');
     bottom.textContent = '';
     bottom.classList.add('active');
 
+    let buffer = '';
     // 逐步读取数据
     while (true) {
-        const {done, value} = await reader.read();
+        const { done, value } = await reader.read();
         if (done) break; // 如果流结束，退出循环
 
         // 解码并处理数据
-        const chunk = decoder.decode(value);
-        const data = JSON.parse(chunk);
+        buffer += decoder.decode(value, { stream: true });
+        
+        // 按行分割处理
+        let lastIndex = 0;
+        while ((lastIndex = buffer.indexOf('\n')) !== -1) {
+            const line = buffer.slice(0, lastIndex).trim();
+            buffer = buffer.slice(lastIndex + 1);
 
-        // 逐步更新页面内容
-        bottom.textContent += data.response;
+            // 跳过空行和注释
+            if (line === '') continue;
+            if (line.startsWith(':')) continue;
+
+            // 解析 data 字段
+            if (line.startsWith('data:')) {
+                // 提取 data 内容（移除前缀和首尾空格）
+                const eventData = line.slice(5).trim();
+                let data = JSON.parse(eventData);
+                // 逐步更新页面内容
+                bottom.textContent += data.c;
+            }
+        }
 
         // 将滚动位置设置为元素的最大可滚动高度
         bottom.scrollTop = bottom.scrollHeight;
@@ -1229,7 +1255,7 @@ async function testllm(word) {
     spinner.classList.remove('active');
 }
 
-window.search=search;
+window.testllm = testllm;
 
 /***/ }),
 
@@ -1488,17 +1514,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_mottoData_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_data_mottoData_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _js_util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/util.js */ "./src/js/util.js");
 /* harmony import */ var _js_util_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_util_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _js_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/index.js */ "./src/js/index.js");
-/* harmony import */ var _js_index_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_index_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _js_gist_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/gist.js */ "./src/js/gist.js");
-/* harmony import */ var _js_gist_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_gist_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _js_wallpaper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/wallpaper.js */ "./src/js/wallpaper.js");
-/* harmony import */ var _js_wallpaper_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_wallpaper_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _js_motto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/motto.js */ "./src/js/motto.js");
-/* harmony import */ var _js_motto_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_js_motto_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
-/* harmony import */ var _css_note_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./css/note.css */ "./src/css/note.css");
+/* harmony import */ var _js_llm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/llm.js */ "./src/js/llm.js");
+/* harmony import */ var _js_llm_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_llm_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_index_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/index.js */ "./src/js/index.js");
+/* harmony import */ var _js_index_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_index_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _js_gist_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/gist.js */ "./src/js/gist.js");
+/* harmony import */ var _js_gist_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_gist_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _js_wallpaper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/wallpaper.js */ "./src/js/wallpaper.js");
+/* harmony import */ var _js_wallpaper_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_js_wallpaper_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _js_motto_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/motto.js */ "./src/js/motto.js");
+/* harmony import */ var _js_motto_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_js_motto_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
+/* harmony import */ var _css_note_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./css/note.css */ "./src/css/note.css");
 //js
+
 
 
 

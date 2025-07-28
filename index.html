@@ -44,43 +44,45 @@
 
 <div id="searchPart">
     <div class="searchType">
-        <button id="baidu" data-select="true">
+        <button id="baidu" data-select="true" onclick="changeSearch(this)">
             百度
         </button>
-        <button id="zhihu">
+        <button id="zhihu" onclick="changeSearch(this)">
             知乎
         </button>
-        <button id="sogou">
+        <!-- <button id="sogou" onclick="changeSearch(this)">
             搜狗
-        </button>
-        <button id="fanyi">
+        </button>  -->
+        <button id="fanyi" onclick="changeSearch(this)">
             词典
         </button>
-        <button id="bing">
+        <button id="bing" onclick="changeSearch(this)">
             Bing
         </button>
-        <!--        <button id="google">-->
+        <!--        <button id="google" onclick="changeSearch(this)">-->
         <!--            Google-->
         <!--        </button>-->
-        <button id="yandex">
+        <button id="yandex" onclick="changeSearch(this)">
             Yandex
         </button>
-        <button id="github">
+        <button id="github" onclick="changeSearch(this)">
             Github
         </button>
-<!--        <button id="ai">-->
-<!--            AI-->
-<!--        </button>-->
+        <button id="ai" onclick="changeSearch(this)">
+            AI
+        </button>
     </div>
     <div class="search">
         <input type="text" id="search" autofocus onkeydown="search()" placeholder="请输入搜索词">
     </div>
-    <div id="search-bottom"></div>
 
     <div id="search-sug"></div>
 </div>
 
 <!--底部格言-->
 <div id="motto"></div>
+
+<!-- ai问答 -->
+<div id="llmPart"></div>
 </body>
 </html>
