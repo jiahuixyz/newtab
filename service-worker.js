@@ -85,10 +85,10 @@ define(['./workbox-9dc299d5'], (function (workbox) { 'use strict';
     "revision": "f6650eecb0f1357cde829342b365826e"
   }, {
     "url": "index.html",
-    "revision": "a835f887a3a5106983bcb333ab1b6401"
+    "revision": "6f0d4cf81882f692f9fc46685309f983"
   }, {
     "url": "index.js",
-    "revision": "b167437226fc8252d7daa2d59caa2f6d"
+    "revision": "45c43cc3403e4dc57b43a665495a80d8"
   }], {});
   workbox.registerRoute(/.(?:js|css|html|ico|jpg)$/, new workbox.CacheFirst({
     "cacheName": "static-resources",
@@ -99,3 +99,4 @@ define(['./workbox-9dc299d5'], (function (workbox) { 'use strict';
   }), 'GET');
 
 }));
+//# sourceMappingURL=service-worker.js.map
