@@ -120,7 +120,7 @@ function search() {
             window.open(`https://github.com/search?q=${word}`);
         }
         if (site === "fanyi") {
-            window.open(`https://fanyi.baidu.com/#zh/en/${word}`);
+            window.open(`https://www.iciba.com/word?w=${word}`);
         }
         if (site === "ai") {
             if (word) {

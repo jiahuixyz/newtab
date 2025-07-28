@@ -10,7 +10,12 @@ const resolve = (pathStr) => {
 /**@type {import('webpack').Configuration}*/
 module.exports = {
 	mode: "development",
+	devtool: 'source-map',
 	entry: resolve("./src/index.js"),
+	devServer: {
+		open: true,
+		port: 32006
+	},
 	output: {
 		path: resolve("./dist"),
 		filename: "index.js",
